@@ -1,7 +1,9 @@
 use std::io::{BufRead, Write};
 
 fn main() {
-    let listener = std::net::TcpListener::bind("127.0.0.1:9999").unwrap();
+    //let listener = std::net::TcpListener::bind("127.0.0.1:9999").unwrap();
+    let listener = std::net::TcpListener::bind("192.168.100.119:9999").unwrap();
+
     for mut stream in listener.incoming() {
         let mut stream = stream.unwrap();
         let mut rdr = std::io::BufReader::new(&mut stream);
